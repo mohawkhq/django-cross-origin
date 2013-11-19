@@ -21,16 +21,33 @@ class AccessControlMixin(object):
     access_control_allow_credentials = False
 
     def get_access_control_allow_credentials(self):
+        """
+        Returns whether cross-origin requests allow user credentials.
+
+        Should return either True or False.
+        """
         return self.access_control_allow_credentials
 
     access_control_max_age = 60 * 30  # 30 minutes.
 
     def get_access_control_max_age(self):
+        """
+        Returns how long the browser should cache the cross-origin credentials.
+
+        Should return an integer specifying seconds.
+        """
         return self.access_control_max_age
 
     access_control_allow_methods = None
 
     def get_access_control_allow_methods(self):
+        """
+        Returns the allowed methods.
+
+        The default implementation returns the known HTTP method
+        names that this view implements. Override to return a
+        list or tuple of strings.
+        """
         if self.access_control_allow_methods is None:
             return [
                 method
@@ -43,6 +60,9 @@ class AccessControlMixin(object):
     access_control_allow_headers = ("origin", "content-type", "accept", "authorization")
 
     def get_access_control_allow_headers(self):
+        """
+        Returns a tuple of allowed request headers.
+        """
         return self.access_control_allow_headers
 
     def options(self, request, *args, **kwargs):
