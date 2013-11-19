@@ -36,6 +36,10 @@ to your view:
         """Your view code here!"""
 
 
+All CORS response headers can be customized by overriding accessor methods on your view. For a complete
+list of available accessors, see the source code for `AccessControlMixin <https://github.com/mohawkhq/django-cross-origin/blob/master/cross_origin/views.py>`_.
+
+
 More information
 ----------------
 
