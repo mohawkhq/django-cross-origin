@@ -11,4 +11,4 @@ dist
 build
 MANIFEST
 venv
-test.db
+db.sqlite
