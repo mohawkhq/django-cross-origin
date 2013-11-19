@@ -1,0 +1,1 @@
+# Required to start Django <= 1.5 tests.
